@@ -62,7 +62,7 @@ function Page() {
   const getCharacter = async (character: string) => {
     try {
 
-      const response = await axios.get(`https://kitsu.io/api/edge/characters?filter[name]=${character}&Page[limit]=10&Page[offset]=0`)
+      const response = await axios.get(`https://kitsu.app/api/edge/characters?filter[name]=${character}&Page[limit]=10&Page[offset]=0`)
       // const response = await axios.get(`https://kitsu.io/api/edge/anime?filter[text]=${character}`)
 
       setsrc(response.data.data)
@@ -218,8 +218,11 @@ function Page() {
                     <PopoverTrigger className='py-2 px-4 bg-gray-700 rounded-md font-bold text-sm hover:bg-gray-400'>Share</PopoverTrigger>
                     <PopoverContent>Coming soon.</PopoverContent>
                   </Popover>
-
-                  <button className='py-2 px-4 bg-gray-700 rounded-md font-bold text-sm hover:bg-gray-400 '>. . .</button>
+                  <Popover>
+                    <PopoverTrigger className='py-2 px-4 bg-gray-700 rounded-md font-bold text-sm hover:bg-gray-400 '>. . .</PopoverTrigger>
+                    <PopoverContent>Coming soon.</PopoverContent>
+                  </Popover>
+                  {/* <button className='py-2 px-4 bg-gray-700 rounded-md font-bold text-sm hover:bg-gray-400 '></button> */}
 
 
                 </div>
@@ -230,7 +233,7 @@ function Page() {
               <div className=' w-full full h-[90%]  flex gap-7  py-10 px-2 pl-4 justify-center'>
 
 
-                <div className='h-full git rounded-sm w-[40%] flex items-center justify-center '> {/* keyboard div*/}
+                <div className='h-full  git rounded-sm w-[40%] flex items-center justify-center '> {/* keyboard div*/}
 
 
                   <div className="flex flex-col items-center w-fit rounded-lg border-[4px] justify-center p-4 space-y-2">
@@ -400,7 +403,7 @@ function Page() {
             </div>
 
           </div>
-          <Export row1={convertedimgEach1} row2={convertedimgEach2} row3={convertedimgEach3} loaded={loaded} />
+          <Export row1={convertedimgEach1} row2={convertedimgEach2} row3={convertedimgEach3} loaded={loaded} transparency={transparency} />
 
           {/*mobile view*/}
 
@@ -408,7 +411,7 @@ function Page() {
 
             <h2 className='text-white font-bold text-xl'>Preview</h2>
             <div className='w-full flex flex-col gap-4   '>
-              <div className="flex flex-col  items-center w-fit self-center   rounded-lg border-[4px] justify-center p-2 space-y-2">
+              <div className="flex flex-col  items-center w-fit self-center    rounded-lg border-[4px] justify-center p-2 space-y-2">
                 <div className="flex space-x-1">
 
                   {
